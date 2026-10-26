@@ -1068,7 +1068,6 @@ button.social-link {
 }
 .track-lyrics-source {
     white-space: pre-wrap;
-    /* Optional: Use a monospace font if you want the exact look in your image */
     font-family: monospace;
 }
 .player-message {

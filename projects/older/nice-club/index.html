@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>nice club — Steven Claros</title>
+        <script>document.documentElement.dataset.theme = localStorage.getItem("steven-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");</script>
         <link rel="stylesheet" href="../../../styles.css" />
         <link rel="icon" type="image/x-icon" href="../../images/icon.ico">
         <script src="../../../script.js" defer></script>
@@ -11,7 +12,11 @@
     <body>
         <div class="site-shell">
             <aside class="sidebar">
-                <div class="dashboard-header">
+                                <div class="theme-toggle-wrap">
+                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+                        <span class="theme-icon" aria-hidden="true">☾</span>
+                    </button>
+                </div>                <div class="dashboard-header">
                     <a class="brand" href="/"
                         ><span class="full-brand">steven claros</span
                         ><span class="mini-brand">sc</span></a

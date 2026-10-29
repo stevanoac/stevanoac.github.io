@@ -1,3 +1,35 @@
+const savedTheme = window.localStorage.getItem("steven-theme");
+const preferredTheme =
+  savedTheme ||
+  (window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light");
+document.body.dataset.theme = preferredTheme;
+
+const themeButton = document.querySelector("[data-theme-toggle]");
+const setTheme = (theme) => {
+  const isDark = theme === "dark";
+  document.documentElement.dataset.theme = isDark ? "dark" : "light";
+  document.body.dataset.theme = isDark ? "dark" : "light";
+  window.localStorage.setItem("steven-theme", isDark ? "dark" : "light");
+  if (themeButton) {
+    themeButton.setAttribute(
+      "aria-label",
+      isDark ? "Switch to light mode" : "Switch to dark mode",
+    );
+    themeButton.setAttribute("aria-pressed", String(isDark));
+    themeButton.querySelector(".theme-icon").textContent = isDark ? "☀" : "☾";
+  }
+};
+setTheme(preferredTheme);
+themeButton?.addEventListener("click", () => {
+  document.documentElement.classList.add("theme-transitioning");
+  setTheme(document.documentElement.dataset.theme === "dark" ? "light" : "dark");
+  window.setTimeout(() => {
+    document.documentElement.classList.remove("theme-transitioning");
+  }, 460);
+});
+
 const dashboard = document.querySelector(".site-shell");
 const dashboardButton = document.querySelector(".dashboard-toggle");
 const menuButton = document.querySelector(".menu-toggle");

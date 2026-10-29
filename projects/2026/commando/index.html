@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>commando — Steven Claros</title>
+        <script>
+            document.documentElement.dataset.theme =
+                localStorage.getItem("steven-theme") ||
+                (matchMedia("(prefers-color-scheme: dark)").matches
+                    ? "dark"
+                    : "light");
+        </script>
+        <link rel="stylesheet" href="../../../styles.css" />
+        <link rel="icon" type="image/x-icon" href="../../images/icon.ico" />
+        <script src="../../../script.js" defer></script>
+    </head>
+    <body>
+        <div class="site-shell">
+            <aside class="sidebar">
+                <div class="theme-toggle-wrap">
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
+                        <span class="theme-icon" aria-hidden="true">☾</span>
+                    </button>
+                </div>
+                <div class="dashboard-header">
+                    <a class="brand" href="/"
+                        ><span class="full-brand">steven claros</span
+                        ><span class="mini-brand">sc</span></a
+                    ><button
+                        class="dashboard-toggle"
+                        type="button"
+                        aria-expanded="true"
+                        aria-controls="dashboard"
+                        aria-label="Hide dashboard"
+                    >
+                        <span>«</span>
+                    </button>
+                </div>
+                <div class="dashboard-body" id="dashboard">
+                    <button
+                        class="menu-toggle"
+                        type="button"
+                        aria-expanded="true"
+                        aria-controls="site-menu"
+                    >
+                        <span>pages</span><span class="menu-icon">−</span>
+                    </button>
+                    <nav class="directory is-open" id="site-menu">
+                        <div class="directory-inner">
+                            <a class="directory-link" href="/">home</a
+                            ><a class="directory-link" href="/about/">about</a
+                            ><a
+                                class="directory-link active"
+                                href="../../../projects/"
+                                >projects</a
+                            ><a class="directory-link" href="/hardware/"
+                                >hardware</a
+                            ><a class="directory-link" href="/contact/"
+                                >contact</a
+                            >
+                        </div>
+                    </nav>
+                </div>
+                <div class="sidebar-footer">
+                    <p class="copyright">© 2026 Steven Claros</p>
+                </div>
+            </aside>
+            <main class="main-content">
+                <section class="page-content">
+                    <p class="section-kicker">
+                        <a href="../../../projects/">back to projects</a>
+                    </p>
+                    <h1>commando</h1>
+                    <p>
+                        Commando is a modern command library for Spigot and
+                        Paper servers (1.8.8 – 1.21+). It handles nested
+                        subcommands, tab-completion, type parsing, and paginated
+                        help using annotations—without needing to touch
+                        plugin.yml.
+                    </p>
+                    <p>
+                        you can find Commando
+                        <u
+                            ><a href="https://github.com/stevanoac/Commando"
+                                >here</a
+                            ></u
+                        >.
+                    </p>
+                    <p>some info and features:</p>
+                    <ul class="feature-list">
+                        <li>tab completion</li>
+                        <li>automatic paginated help</li>
+                        <li>automatic and custom type parsing</li>
+                        <li>no need for plugin.yml editing</li>
+                        <li>path based sub commands</li>
+                        <li>
+                            and
+                            <u
+                                ><a href="https://github.com/stevanoac/Commando"
+                                    >more</a
+                                ></u
+                            >!
+                        </li>
+                    </ul>
+                </section>
+            </main>
+        </div>
+    </body>
+</html>

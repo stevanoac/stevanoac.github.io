@@ -472,7 +472,7 @@ a:focus-visible {
     inset: 0;
     justify-content: center;
     opacity: 0;
-    padding: 32px;
+    padding: 24px;
     position: fixed;
     transition:
         opacity 0.25s ease,
@@ -488,14 +488,14 @@ a:focus-visible {
     align-items: center;
     display: grid;
     gap: 18px;
-    grid-template-columns: 42px minmax(0, 1000px) 42px;
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
     max-height: 100%;
-    width: min(1100px, 100%);
+    width: min(1500px, 100%);
 }
 .lightbox-image-wrap {
     align-items: center;
     display: flex;
-    height: min(72vh, 720px);
+    height: min(84vh, 1000px);
     justify-content: center;
     min-width: 0;
 }
@@ -507,8 +507,8 @@ a:focus-visible {
 }
 .lightbox-button {
     align-items: center;
-    background: rgba(255, 255, 255, 0.9);
-    border: 0;
+    background: transparent;
+    border: 1px solid var(--line);
     color: var(--ink);
     cursor: pointer;
     display: flex;
@@ -519,7 +519,8 @@ a:focus-visible {
 }
 .lightbox-button:hover,
 .lightbox-button:focus-visible {
-    background: #fff;
+    background: var(--hover);
+    border-color: var(--active);
 }
 .lightbox-close {
     background: transparent;
@@ -541,8 +542,8 @@ a:focus-visible {
     transform: translateX(-50%);
 }
 .lightbox-thumbnail {
-    background: #fff;
-    border: 2px solid transparent;
+    background: var(--surface);
+    border: 2px solid var(--line);
     cursor: pointer;
     height: 52px;
     opacity: 0.65;
@@ -550,7 +551,7 @@ a:focus-visible {
     width: 72px;
 }
 .lightbox-thumbnail.is-selected {
-    border-color: #fff;
+    border-color: var(--active);
     opacity: 1;
 }
 .lightbox-thumbnail img {
@@ -1352,7 +1353,7 @@ button.social-link {
         width: 34px;
     }
     .lightbox-image-wrap {
-        height: 65vh;
+        height: 78vh;
     }
     .lightbox-thumbnail {
         height: 42px;
@@ -1402,7 +1403,6 @@ button.social-link {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
     }
-
 }
 
 .theme-transitioning,

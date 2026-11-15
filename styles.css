@@ -712,6 +712,55 @@ body.lightbox-open {
     padding: 18px;
     width: 100%;
 }
+.hardware-image-carousel {
+    align-items: center;
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+    height: 190px;
+    overflow: hidden;
+    padding: 0 8px;
+    position: relative;
+}
+.hardware-image-frame {
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    position: relative;
+}
+.hardware-image-carousel .hardware-image {
+    border: 0;
+    height: 100%;
+    left: 0;
+    object-fit: contain;
+    padding: 18px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.hardware-image-carousel .image-placeholder {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+}
+.hardware-image-carousel .hardware-image:not([hidden]) {
+    z-index: 1;
+}
+.hardware-carousel-status {
+    bottom: 4px;
+    color: var(--muted);
+    font-size: 11px;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+    transform: translateX(-50%);
+}
 .card-body {
     padding: 18px;
 }
@@ -783,6 +832,28 @@ body.lightbox-open {
 }
 .quick-links a {
     color: var(--ink);
+}
+.spotify-embed {
+    margin-top: 28px;
+    max-width: 780px;
+}
+.spotify-embed-frame {
+    border: 0;
+    border-radius: 12px;
+    display: block;
+    height: 152px;
+    width: 100%;
+}
+.spotify-embed-dark {
+    display: none;
+}
+:root[data-theme="dark"] .spotify-embed-light,
+body[data-theme="dark"] .spotify-embed-light {
+    display: none;
+}
+:root[data-theme="dark"] .spotify-embed-dark,
+body[data-theme="dark"] .spotify-embed-dark {
+    display: block;
 }
 
 .work-section {

@@ -5,7 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="description" content="About Steven Claros" />
         <title>About — Steven Claros</title>
-        <script>document.documentElement.dataset.theme = localStorage.getItem("steven-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");</script>
+        <script>
+            document.documentElement.dataset.theme =
+                localStorage.getItem("steven-theme") || "light";
+        </script>
         <link rel="stylesheet" href="../styles.css" />
         <link rel="icon" type="image/x-icon" href="../images/icon.ico" />
         <script src="../script.js" defer></script>
@@ -13,11 +16,18 @@
     <body>
         <div class="site-shell">
             <aside class="sidebar">
-                                <div class="theme-toggle-wrap">
-                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+                <div class="theme-toggle-wrap">
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
                         <span class="theme-icon" aria-hidden="true">☾</span>
                     </button>
-                </div>                <div class="dashboard-header">
+                </div>
+                <div class="dashboard-header">
                     <a class="brand" href="/" aria-label="Steven Claros home"
                         ><span class="full-brand">steven claros</span
                         ><span class="mini-brand">sc</span></a
@@ -112,6 +122,42 @@
                         <li><i>c++</i></li>
                         <li><i>c#</i></li>
                     </ul>
+                    <h3>what ive been listening to:</h3>
+                    <div
+                        class="spotify-embed"
+                        aria-label="Featured Spotify album"
+                    >
+                        <iframe
+                            class="spotify-embed-frame spotify-embed-light"
+                            data-testid="embed-iframe"
+                            src="https://open.spotify.com/embed/album/6TnYUZpDRbl6GiREL8Md4F?utm_source=generator&theme=0&si=b1ece00e0f4f4568"
+                            title="Featured Spotify album"
+                            allowfullscreen
+                            allow="
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                fullscreen;
+                                picture-in-picture;
+                            "
+                            loading="lazy"
+                        ></iframe>
+                        <iframe
+                            class="spotify-embed-frame spotify-embed-dark"
+                            data-testid="embed-iframe"
+                            src="https://open.spotify.com/embed/album/6TnYUZpDRbl6GiREL8Md4F?utm_source=generator&si=b1ece00e0f4f4568"
+                            title="Featured Spotify album"
+                            allowfullscreen
+                            allow="
+                                autoplay;
+                                clipboard-write;
+                                encrypted-media;
+                                fullscreen;
+                                picture-in-picture;
+                            "
+                            loading="lazy"
+                        ></iframe>
+                    </div>
                     <h3>links:</h3>
                     <div class="social-links" aria-label="Social links">
                         <button

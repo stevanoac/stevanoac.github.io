@@ -1,9 +1,6 @@
 const savedTheme = window.localStorage.getItem("steven-theme");
 const preferredTheme =
-  savedTheme ||
-  (window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light");
+  savedTheme || "light";
 document.body.dataset.theme = preferredTheme;
 
 const themeButton = document.querySelector("[data-theme-toggle]");
@@ -187,6 +184,62 @@ document.querySelectorAll("[data-carousel]").forEach((carousel) => {
     if (event.key === "ArrowRight") showImage(current + 1, true);
   });
   discoveryPromise = discoverImages();
+});
+
+document.querySelectorAll("[data-hardware-carousel]").forEach((carousel) => {
+  const image = carousel.querySelector("[data-hardware-image]");
+  const status = carousel.querySelector("[data-hardware-status]");
+  const directory = carousel.dataset.imageDirectory;
+  const extension = carousel.dataset.imageExtension || "png";
+  const placeholder = carousel.querySelector(".image-placeholder");
+  const images = [];
+  let current = 0;
+
+  const imageExists = (src) =>
+    new Promise((resolve) => {
+      const probe = new Image();
+      probe.onload = () => resolve(true);
+      probe.onerror = () => resolve(false);
+      probe.src = src;
+    });
+
+  const update = () => {
+    image.src = images[current];
+    image.alt = `Computer photo ${current + 1} of ${images.length}`;
+    status.textContent = `${String(current + 1).padStart(2, "0")} / ${String(images.length).padStart(2, "0")}`;
+  };
+
+  const discover = async () => {
+    for (let index = 0; index < 100; index += 1) {
+      const src = `${directory}${index}.${extension}`;
+      if (!(await imageExists(src))) break;
+      images.push(src);
+    }
+
+    if (!images.length) return;
+    placeholder.hidden = true;
+    image.hidden = false;
+    carousel.querySelector(".hardware-carousel-previous").hidden =
+      images.length < 2;
+    carousel.querySelector(".hardware-carousel-next").hidden =
+      images.length < 2;
+    status.hidden = images.length < 2;
+    update();
+  };
+
+  carousel
+    .querySelector(".hardware-carousel-previous")
+    .addEventListener("click", () => {
+      current = (current - 1 + images.length) % images.length;
+      update();
+    });
+  carousel
+    .querySelector(".hardware-carousel-next")
+    .addEventListener("click", () => {
+      current = (current + 1) % images.length;
+      update();
+    });
+  discover();
 });
 
 const audioPlayer = document.querySelector("[data-audio-player]");

@@ -8,19 +8,29 @@
             content="Steven Claros's computer and peripheral collection."
         />
         <title>Hardware — Steven Claros</title>
-        <script>document.documentElement.dataset.theme = localStorage.getItem("steven-theme") || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");</script>
+        <script>
+            document.documentElement.dataset.theme =
+                localStorage.getItem("steven-theme") || "light";
+        </script>
         <link rel="stylesheet" href="../styles.css" />
-        <link rel="icon" type="image/x-icon" href="../images/icon.ico">
+        <link rel="icon" type="image/x-icon" href="../images/icon.ico" />
         <script src="../script.js" defer></script>
     </head>
     <body>
         <div class="site-shell">
             <aside class="sidebar">
-                                <div class="theme-toggle-wrap">
-                    <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch to dark mode" aria-pressed="false">
+                <div class="theme-toggle-wrap">
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        data-theme-toggle
+                        aria-label="Switch to dark mode"
+                        aria-pressed="false"
+                    >
                         <span class="theme-icon" aria-hidden="true">☾</span>
                     </button>
-                </div>                <div class="dashboard-header">
+                </div>
+                <div class="dashboard-header">
                     <a class="brand" href="/"
                         ><span class="full-brand">steven claros</span
                         ><span class="mini-brand">sc</span></a
@@ -87,13 +97,52 @@
                         </div>
                         <div class="collection-grid">
                             <article class="hardware-card">
-                                <div class="image-placeholder">
-                                    <span>no image provided</span>
+                                <div
+                                    class="hardware-image-carousel"
+                                    data-hardware-carousel
+                                    data-image-directory="images/computer/"
+                                    data-image-extension="png"
+                                >
+                                    <button
+                                        class="carousel-button hardware-carousel-previous"
+                                        type="button"
+                                        aria-label="Previous computer photo"
+                                        hidden
+                                    >
+                                        ←
+                                    </button>
+                                    <div class="hardware-image-frame">
+                                        <div class="image-placeholder">
+                                            <span>no image provided</span>
+                                        </div>
+                                        <img
+                                            class="hardware-image"
+                                            data-hardware-image
+                                            alt=""
+                                            hidden
+                                        />
+                                    </div>
+                                    <button
+                                        class="carousel-button hardware-carousel-next"
+                                        type="button"
+                                        aria-label="Next computer photo"
+                                        hidden
+                                    >
+                                        →
+                                    </button>
+                                    <p
+                                        class="hardware-carousel-status"
+                                        data-hardware-status
+                                        hidden
+                                        aria-live="polite"
+                                    >
+                                        01 / 01
+                                    </p>
                                 </div>
                                 <div class="card-body">
                                     <h3>Main Computer</h3>
                                     <p>
-                                        This is the computer where I do
+                                        this is the computer where i do
                                         everything.
                                     </p>
                                     <dl class="spec-list">
@@ -116,6 +165,39 @@
                                         <div>
                                             <dt>Storage</dt>
                                             <dd>2TB</dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </article>
+                            <article class="hardware-card">
+                                <img
+                                    class="hardware-image"
+                                    src="images/computer_0.png"
+                                    alt="HP 22-DD0224"
+                                />
+                                <div class="card-body">
+                                    <h3>HP 22-DD0224</h3>
+                                    <p>this is my second computer.</p>
+                                    <dl class="spec-list">
+                                        <div>
+                                            <dt>Bought</dt>
+                                            <dd>2026 (Thrifted)</dd>
+                                        </div>
+                                        <div>
+                                            <dt>CPU</dt>
+                                            <dd>Intel Celeron J4025</dd>
+                                        </div>
+                                        <div>
+                                            <dt>RAM</dt>
+                                            <dd>4GB DDR4</dd>
+                                        </div>
+                                        <div>
+                                            <dt>GPU</dt>
+                                            <dd>Integrated Graphics</dd>
+                                        </div>
+                                        <div>
+                                            <dt>Storage</dt>
+                                            <dd>128GB SSD</dd>
                                         </div>
                                     </dl>
                                 </div>
@@ -371,9 +453,9 @@
                                 <div class="card-body">
                                     <h3>OP1 8K</h3>
                                     <p>
-                                        Great shape and overall feel. Though,
+                                        great shape and overall feel. though,
                                         wireless is always going to be something
-                                        I yearn for.
+                                        i yearn for.
                                     </p>
                                     <dl class="spec-list">
                                         <div>
@@ -392,8 +474,8 @@
                                 <div class="card-body">
                                     <h3>Viper V3 Pro</h3>
                                     <p>
-                                        The mouse overall is great. It was just
-                                        to big for me, maybe in the future I
+                                        the mouse overall is great. it was just
+                                        to big for me, maybe in the future i
                                         will seek out the viper signature.
                                     </p>
                                     <dl class="spec-list">
@@ -413,10 +495,10 @@
                                 <div class="card-body">
                                     <h3>Pulsar X2V2 (Medium)</h3>
                                     <p>
-                                        I'm not too sure how to feel about this
+                                        im not too sure how to feel about this
                                         one. to be honest it kind of reminds me
-                                        of the g pro wireless with it's shape.
-                                        it was too big for me. i also had the 4k
+                                        of the g pro wireless with its shape. it
+                                        was too big for me. i also had the 4k
                                         dongle.
                                     </p>
                                     <dl class="spec-list">

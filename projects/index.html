@@ -6,10 +6,7 @@
         <title>projects — Steven Claros</title>
         <script>
             document.documentElement.dataset.theme =
-                localStorage.getItem("steven-theme") ||
-                (matchMedia("(prefers-color-scheme: dark)").matches
-                    ? "dark"
-                    : "light");
+                localStorage.getItem("steven-theme") || "light";
         </script>
         <link rel="stylesheet" href="../styles.css" />
         <link rel="icon" type="image/x-icon" href="../images/icon.ico" />
@@ -96,6 +93,17 @@
                                     >
                                     <span class="project-entry-description"
                                         >A work-in-progress sff pc build.</span
+                                    >
+                                </a>
+                                <a
+                                    class="project-entry project-wip"
+                                    href="/projects/2026/portfolio/"
+                                >
+                                    <span class="project-entry-title"
+                                        >portfolio</span
+                                    >
+                                    <span class="project-entry-description"
+                                        >This is my portfolio site!</span
                                     >
                                 </a>
                                 <a
